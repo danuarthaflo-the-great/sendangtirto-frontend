@@ -570,17 +570,18 @@
   color: var(--biru);
 }
 .ocard.top .ocard-avatar { 
-  background: rgba(255,255,255,0.15); 
-  border: 2px solid rgba(201,168,76,0.4); 
+  background: var(--emas); 
+  border: 2px solid var(--emas-light); 
 }
 .ocard.top .ocard-avatar i {
-  color: var(--emas-light);
+  color: var(--biru);
 }
 .ocard.sekretaris .ocard-avatar { 
-  background: rgba(255,255,255,0.15); 
+  background: var(--emas-light); 
+  border: 2px solid var(--putih);
 }
 .ocard.sekretaris .ocard-avatar i {
-  color: var(--putih);
+  color: var(--biru);
 }
 .ocard:not(.top):not(.sekretaris) .ocard-avatar { 
   background: var(--abu); 
@@ -657,7 +658,7 @@
   font-size: 18px; 
 }
 .ocard.staf .ocard-avatar i {
-  color: var(--muted);
+  color: var(--biru-mid);
 }
 
 /* Panel Detail Tugas saat Kartu Diklik */

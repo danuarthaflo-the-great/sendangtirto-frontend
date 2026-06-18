@@ -35,8 +35,9 @@
     .lcard-detail-header p  { font-size: 12px; color: var(--muted); }
     .lcard-divider { height: 1px; background: rgba(15,52,96,0.08); margin: 14px 0; }
     .lcard-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
-    .lcard-meta-item { font-size: 12px; color: var(--muted); }
-    .lcard-meta-item strong { color: var(--biru); }
+    .lcard-meta-item { font-size: 12px; color: var(--muted); display: inline-flex; align-items: center; }
+    .lcard-meta-item i { color: var(--biru-light); margin-right: 6px; font-size: 13px; }
+    .lcard-meta-item strong { color: var(--biru); margin-left: 2px; }
 
     /* Alur layanan */
     .alur-steps { display: flex; flex-direction: column; gap: 0; counter-reset: step; }
@@ -98,8 +99,8 @@
           <li>Mengisi formulir permohonan</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>1 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>1 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
@@ -118,8 +119,8 @@
           <li>Surat pengantar RT/RW</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>3 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>3 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
@@ -138,8 +139,8 @@
           <li>Surat ijin orang tua (jika belum 21 tahun)</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>2 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>2 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
@@ -157,8 +158,8 @@
           <li>Dokumen pendukung sesuai jenis perubahan</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>7 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>7 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
@@ -176,8 +177,8 @@
           <li>Foto lokasi usaha</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>1 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>1 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
@@ -195,8 +196,8 @@
           <li>Surat keterangan penghasilan (jika ada)</li>
         </ul>
         <div class="lcard-meta">
-          <div class="lcard-meta-item">⏱ <strong>1 hari kerja</strong></div>
-          <div class="lcard-meta-item">💰 <strong>Gratis</strong></div>
+          <div class="lcard-meta-item"><i class="fa-regular fa-clock"></i> <strong>1 hari kerja</strong></div>
+          <div class="lcard-meta-item"><i class="fa-solid fa-coins"></i> <strong>Gratis</strong></div>
         </div>
       </div>
 
