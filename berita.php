@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Berita & Kegiatan – Kalurahan Sendangtirto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="css/navbar.css"/>
-  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/main.css?v=1.1"/>
+  <link rel="stylesheet" href="css/navbar.css?v=1.1"/>
+  <link rel="stylesheet" href="css/components.css?v=1.1"/>
 </head>
 <body>
 
@@ -31,17 +31,17 @@
 
     <div class="search-box fu">
       <input type="text" id="searchInput" placeholder="🔍 Cari berita..."/>
-      <button onclick="doSearch()">Cari</button>
+      <button onclick="lakukanPencarianBerita()">Cari</button>
     </div>
 
     <div class="filter-tabs fu" id="filterTabs">
-      <button class="filter-tab active" onclick="filterBerita('semua', this)">Semua</button>
-      <button class="filter-tab" onclick="filterBerita('sosial', this)">Sosial</button>
-      <button class="filter-tab" onclick="filterBerita('pemerintahan', this)">Pemerintahan</button>
-      <button class="filter-tab" onclick="filterBerita('kesehatan', this)">Kesehatan</button>
-      <button class="filter-tab" onclick="filterBerita('keagamaan', this)">Keagamaan</button>
-      <button class="filter-tab" onclick="filterBerita('pkk', this)">PKK</button>
-      <button class="filter-tab" onclick="filterBerita('keamanan', this)">Keamanan</button>
+      <button class="filter-tab active" onclick="saringKategoriBerita('semua', this)">Semua</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('sosial', this)">Sosial</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('pemerintahan', this)">Pemerintahan</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('kesehatan', this)">Kesehatan</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('keagamaan', this)">Keagamaan</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('pkk', this)">PKK</button>
+      <button class="filter-tab" onclick="saringKategoriBerita('keamanan', this)">Keamanan</button>
       <div class="berita-list-grid auto-stagger" id="beritaGrid">
 
       <div class="blist-card fu" data-kategori="pemerintahan">
@@ -181,43 +181,81 @@
 <script src="js/navbar.js"></script>
 <script src="js/animations.js"></script>
 <script>
-// Filter berita by kategori
-function filterBerita(kat, btn) {
-  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const cards = document.querySelectorAll('#beritaGrid .blist-card');
-  let visible = 0;
-  cards.forEach(card => {
-    const match = kat === 'semua' || card.dataset.kategori === kat;
-    card.style.display = match ? '' : 'none';
-    if (match) visible++;
+// Fungsi untuk menyaring berita berdasarkan kategori yang dipilih
+function saringKategoriBerita(kategoriPilihan, tombolPilihan) {
+  // Ambil semua tombol filter dan hapus kelas 'active' dari tombol tersebut
+  document.querySelectorAll('.filter-tab').forEach(tombolTab => {
+    // Menghapus kelas 'active' pada tab agar tidak terlihat aktif
+    tombolTab.classList.remove('active');
   });
-  document.getElementById('noResult').style.display = visible === 0 ? 'block' : 'none';
+  // Tambahkan kelas 'active' ke tombol filter yang baru saja di-klik oleh pengguna
+  tombolPilihan.classList.add('active');
+  // Ambil seluruh elemen kartu berita di dalam grid berita
+  const kumpulanKartu = document.querySelectorAll('#beritaGrid .blist-card');
+  // Variabel penampung untuk menghitung jumlah kartu berita yang lolos saringan
+  let jumlahKartuTerlihat = 0;
+  // Lakukan perulangan untuk memeriksa kesesuaian kategori pada setiap kartu berita
+  kumpulanKartu.forEach(kartu => {
+    // Periksa apakah kategori pilihan adalah 'semua' atau cocok dengan atribut kategori pada kartu
+    const apakahKategoriCocok = kategoriPilihan === 'semua' || kartu.dataset.kategori === kategoriPilihan;
+    // Tampilkan kartu jika cocok, atau sembunyikan jika tidak cocok dengan kategori pilihan
+    kartu.style.display = apakahKategoriCocok ? '' : 'none';
+    // Jika kartu tersebut cocok dan ditampilkan, tambahkan nilai penghitung kartu terlihat
+    if (apakahKategoriCocok) {
+      // Tambahkan 1 ke variabel jumlah kartu terlihat
+      jumlahKartuTerlihat++;
+    }
+  });
+  // Jika tidak ada kartu berita yang terlihat, tampilkan pesan kosong. Jika ada, sembunyikan pesan tersebut
+  document.getElementById('noResult').style.display = jumlahKartuTerlihat === 0 ? 'block' : 'none';
 }
 
-// Search
-function doSearch() {
-  const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  const cards = document.querySelectorAll('#beritaGrid .blist-card');
-  let visible = 0;
-  cards.forEach(card => {
-    const text = card.textContent.toLowerCase();
-    const match = !q || text.includes(q);
-    card.style.display = match ? '' : 'none';
-    if (match) visible++;
+// Fungsi untuk melakukan pencarian berita berdasarkan teks input pengguna
+function lakukanPencarianBerita() {
+  // Ambil nilai teks dari kolom input pencarian, ubah ke huruf kecil, lalu bersihkan spasi di awal/akhir
+  const kataKunciCari = document.getElementById('searchInput').value.toLowerCase().trim();
+  // Ambil semua elemen kartu berita di dalam grid berita
+  const kumpulanKartu = document.querySelectorAll('#beritaGrid .blist-card');
+  // Variabel penampung untuk menghitung jumlah kartu berita yang lolos pencarian
+  let jumlahKartuTerlihat = 0;
+  // Lakukan perulangan untuk mencari teks kata kunci di dalam setiap kartu berita
+  kumpulanKartu.forEach(kartu => {
+    // Ambil seluruh isi teks dari kartu berita tersebut dan ubah menjadi huruf kecil
+    const isiTeksKartu = kartu.textContent.toLowerCase();
+    // Periksa apakah kata kunci kosong, atau apakah isi teks kartu mengandung kata kunci pencarian
+    const apakahKataKunciCocok = !kataKunciCari || isiTeksKartu.includes(kataKunciCari);
+    // Tampilkan kartu jika cocok dengan kata kunci, atau sembunyikan jika tidak cocok
+    kartu.style.display = apakahKataKunciCocok ? '' : 'none';
+    // Jika kartu tersebut cocok dan ditampilkan, tambahkan nilai penghitung kartu terlihat
+    if (apakahKataKunciCocok) {
+      // Tambahkan 1 ke variabel jumlah kartu terlihat
+      jumlahKartuTerlihat++;
+    }
   });
-  document.getElementById('noResult').style.display = visible === 0 ? 'block' : 'none';
+  // Jika tidak ada kartu berita yang cocok dengan kata kunci, tampilkan pesan kosong. Jika ada, sembunyikan
+  document.getElementById('noResult').style.display = jumlahKartuTerlihat === 0 ? 'block' : 'none';
 }
 
+// Menambahkan event listener keyboard pada input pencarian
 document.getElementById('searchInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doSearch();
+  // Jika tombol yang ditekan oleh pengguna adalah tombol Enter
+  if (e.key === 'Enter') {
+    // Jalankan fungsi pencarian berita
+    lakukanPencarianBerita();
+  }
 });
 
-// Pagination click effect
-document.querySelectorAll('.page-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+// Menambahkan efek klik aktif pada seluruh tombol paginasi halaman
+document.querySelectorAll('.page-btn').forEach(tombolHalaman => {
+  // Daftarkan event klik pada setiap tombol halaman
+  tombolHalaman.addEventListener('click', () => {
+    // Hapus kelas 'active' dari semua tombol halaman terlebih dahulu
+    document.querySelectorAll('.page-btn').forEach(tombolLain => {
+      // Menghapus kelas 'active' pada tombol lain
+      tombolLain.classList.remove('active');
+    });
+    // Tambahkan kelas 'active' ke tombol halaman yang sedang di-klik oleh pengguna
+    tombolHalaman.classList.add('active');
   });
 });
 </script>

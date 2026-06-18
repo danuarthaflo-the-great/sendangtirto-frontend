@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Hubungi Kami – Kalurahan Sendangtirto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="css/navbar.css"/>
-  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/main.css?v=1.1"/>
+  <link rel="stylesheet" href="css/navbar.css?v=1.1"/>
+  <link rel="stylesheet" href="css/components.css?v=1.1"/>
   <style>
     /* Gaya pesan error (Merah) */
     .error-msg {
@@ -117,42 +117,59 @@
 <script src="js/animations.js"></script>
 
 <script>
-const form = document.getElementById("formKontak");
-const alertSukses = document.getElementById("alert-sukses");
+const formulirKontak = document.getElementById("formKontak");
+const kotakPemberitahuanSukses = document.getElementById("alert-sukses");
 
-// Fungsi helper untuk pasang/lepas error (Hanya butuh id input dan id error)
-function cekInput(idInput, idError) {
-  const input = document.getElementById(idInput);
-  const error = document.getElementById(idError);
+// Fungsi helper untuk memeriksa validitas isian input form (apakah kosong atau tidak)
+function periksaValiditasInput(idElemenInput, idElemenError) {
+  // Ambil elemen input HTML berdasarkan ID yang dilewatkan
+  const elemenInput = document.getElementById(idElemenInput);
+  // Ambil elemen pesan error HTML berdasarkan ID yang dilewatkan
+  const elemenError = document.getElementById(idElemenError);
 
-  if (input.value.trim() === "") {
-    input.classList.add("invalid");
-    error.style.display = "block";
-    return false; // Mengembalikan false jika kosong
+  // Periksa apakah nilai isian input setelah dihapus spasi kosongnya bernilai kosong
+  if (elemenInput.value.trim() === "") {
+    // Tambahkan kelas CSS 'invalid' untuk memberi bingkai merah pada input
+    elemenInput.classList.add("invalid");
+    // Tampilkan elemen pesan error di layar dengan mengubah properti display menjadi block
+    elemenError.style.display = "block";
+    // Kembalikan nilai false yang menandakan input tidak valid (kosong)
+    return false;
   } else {
-    input.classList.remove("invalid");
-    error.style.display = "none";
-    return true; // Mengembalikan true jika aman
+    // Hapus kelas CSS 'invalid' agar tampilan input kembali normal
+    elemenInput.classList.remove("invalid");
+    // Sembunyikan kembali elemen pesan error dari layar
+    elemenError.style.display = "none";
+    // Kembalikan nilai true yang menandakan input valid (terisi)
+    return true;
   }
 }
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Tahan reload halaman
+// Menambahkan event listener saat formulir dikirimkan (submit) oleh pengguna
+formulirKontak.addEventListener("submit", function (kejadianSubmit) {
+  // Mencegah tindakan bawaan browser yang akan memuat ulang (reload) halaman
+  kejadianSubmit.preventDefault();
 
-  // Jalankan fungsi cekInput untuk semua kolom
-  const namaValid = cekInput("nama", "err-nama");
-  const waValid = cekInput("wa", "err-wa");
-  const keperluanValid = cekInput("keperluan", "err-keperluan");
-  const pesanValid = cekInput("pesan", "err-pesan");
+  // Memeriksa validitas input nama lengkap dan menyimpan hasilnya
+  const apakahNamaValid = periksaValiditasInput("nama", "err-nama");
+  // Memeriksa validitas input nomor WhatsApp dan menyimpan hasilnya
+  const apakahWaValid = periksaValiditasInput("wa", "err-wa");
+  // Memeriksa validitas pilihan jenis keperluan dan menyimpan hasilnya
+  const apakahKeperluanValid = periksaValiditasInput("keperluan", "err-keperluan");
+  // Memeriksa validitas input isi pesan dan menyimpan hasilnya
+  const apakahPesanValid = periksaValiditasInput("pesan", "err-pesan");
 
-  // Jika semua variabel bernilai true, maka form sukses
-  if (namaValid && waValid && keperluanValid && pesanValid) {
-    alertSukses.style.display = "block"; // Munculkan sukses alert
-    form.reset(); // Kosongkan form
+  // Periksa apakah semua isian form bernilai valid (true)
+  if (apakahNamaValid && apakahWaValid && apakahKeperluanValid && apakahPesanValid) {
+    // Tampilkan kotak pemberitahuan sukses pengiriman pesan ke pengguna
+    kotakPemberitahuanSukses.style.display = "block";
+    // Bersihkan seluruh isian form agar kembali kosong seperti semula
+    formulirKontak.reset();
 
-    // Sembunyikan alert setelah 4 detik
+    // Jalankan timer untuk menyembunyikan kotak pemberitahuan sukses setelah 4 detik
     setTimeout(function () {
-      alertSukses.style.display = "none";
+      // Sembunyikan kotak pemberitahuan sukses pengiriman pesan
+      kotakPemberitahuanSukses.style.display = "none";
     }, 4000);
   }
 });

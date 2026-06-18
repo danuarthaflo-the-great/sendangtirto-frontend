@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Struktur Organisasi – Kalurahan Sendangtirto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="css/main.css"/>
-  <link rel="stylesheet" href="css/navbar.css"/>
-  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/main.css?v=1.1"/>
+  <link rel="stylesheet" href="css/navbar.css?v=1.1"/>
+  <link rel="stylesheet" href="css/components.css?v=1.1"/>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
       <div class="org-tree">
 
         <div style="display:flex;justify-content:center">
-          <div class="ocard top" onclick="showDetail('lurah')">
+          <div class="ocard top" onclick="tampilkanDetailAparatur('lurah')">
             <div class="ocard-pin">Pimpinan</div>
             <div class="ocard-avatar"><i class="fa-solid fa-user-tie"></i></div>
             <div class="ocard-name">Sardjono, S.IP</div>
@@ -44,7 +44,7 @@
         <div class="conn-v"></div>
 
         <div style="display:flex;justify-content:center">
-          <div class="ocard sekretaris" onclick="showDetail('sekretaris')">
+          <div class="ocard sekretaris" onclick="tampilkanDetailAparatur('sekretaris')">
             <div class="ocard-avatar"><i class="fa-solid fa-user-tie"></i></div>
             <div class="ocard-name">Dra. Sri Mulyani</div>
             <div class="ocard-role">Sekretaris Kalurahan</div>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="conn-branches" style="margin-top:28px">
-          <div class="ocard" onclick="showDetail('pemerintahan')">
+          <div class="ocard" onclick="tampilkanDetailAparatur('pemerintahan')">
             <div class="ocard-avatar"><i class="fa-solid fa-building-columns"></i></div>
             <div class="ocard-name">Agung Prihattanto</div>
             <div class="ocard-role">Kasi Pemerintahan</div>
@@ -85,27 +85,27 @@
         <div class="conn-v"></div>
 
         <div class="conn-branches">
-          <div class="ocard staf" onclick="showDetail('staf1')">
+          <div class="ocard staf" onclick="tampilkanDetailAparatur('staf1')">
             <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Awan Prabowo</div>
             <div class="ocard-role">Dukuh Dawukan</div>
           </div>
-          <div class="ocard staf" onclick="showDetail('staf2')">
+          <div class="ocard staf" onclick="tampilkanDetailAparatur('staf2')">
             <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Slamet Riyadi</div>
             <div class="ocard-role">Dukuh Karang</div>
           </div>
-          <div class="ocard staf" onclick="showDetail('staf3')">
+          <div class="ocard staf" onclick="tampilkanDetailAparatur('staf3')">
             <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Marsiyem</div>
             <div class="ocard-role">Dukuh Kadipolo</div>
           </div>
-          <div class="ocard staf" onclick="showDetail('staf4')">
+          <div class="ocard staf" onclick="tampilkanDetailAparatur('staf4')">
             <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Sugeng Wahyudi</div>
             <div class="ocard-role">Dukuh Nayan</div>
           </div>
-          <div class="ocard staf" onclick="showDetail('staf5')">
+          <div class="ocard staf" onclick="tampilkanDetailAparatur('staf5')">
             <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Tri Wibowo</div>
             <div class="ocard-role">Staf Administrasi</div>
@@ -132,7 +132,8 @@
 <script src="js/navbar.js"></script>
 <script src="js/animations.js"></script>
 <script>
-const orgData = {
+// Objek data berisi profil lengkap aparatur desa
+const dataAparaturOrganisasi = {
   lurah:       { name:'Sardjono, S.IP',        role:'Lurah Sendangtirto',      desc:'Memimpin penyelenggaraan urusan pemerintahan, pembangunan, dan kemasyarakatan. Bertanggung jawab kepada Camat Kapanewon Berbah atas seluruh jalannya roda pemerintahan kalurahan.', nip:'19680512 199203 1 002', edu:'S1 Ilmu Pemerintahan', since:'2016' },
   sekretaris:  { name:'Dra. Sri Mulyani',       role:'Sekretaris Kalurahan',    desc:'Membantu Lurah dalam bidang administrasi pemerintahan dan mengkoordinasikan tugas antar seksi. Bertanggung jawab atas ketertiban arsip dan administrasi kalurahan.', nip:'19720304 200003 2 004', edu:'S1 Administrasi Negara', since:'2012' },
   pemerintahan:{ name:'Agung Prihattanto',       role:'Kasi Pemerintahan',      desc:'Melaksanakan urusan pemerintahan umum, pembinaan ketertiban, penegakan peraturan, dan pelaporan data kependudukan wilayah.', nip:'19850721 201001 1 003', edu:'S1 Hukum', since:'2020' },
@@ -146,17 +147,30 @@ const orgData = {
   staf5:       { name:'Tri Wibowo',              role:'Staf Administrasi',      desc:'Membantu operasional administrasi harian kantor kalurahan, meliputi surat masuk, surat keluar, dan pengelolaan arsip digital.', nip:'–', edu:'D3 Administrasi', since:'2021' },
 };
 
-function showDetail(key) {
-  const d = orgData[key]; if (!d) return;
-  document.getElementById('od-name').textContent  = d.name;
-  document.getElementById('od-role').textContent  = d.role;
-  document.getElementById('od-desc').textContent  = d.desc;
-  document.getElementById('od-nip').textContent   = d.nip;
-  document.getElementById('od-edu').textContent   = d.edu;
-  document.getElementById('od-since').textContent = d.since;
-  const panel = document.getElementById('org-detail');
-  panel.classList.add('show');
-  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+// Fungsi untuk menampilkan panel detail informasi jabatan saat kartu di-klik
+function tampilkanDetailAparatur(kunciJabatan) {
+  // Mengambil objek data aparatur berdasarkan kunci jabatan yang dikirimkan
+  const profilAparatur = dataAparaturOrganisasi[kunciJabatan]; 
+  
+  // Jika profil tidak ditemukan, batalkan eksekusi
+  if (!profilAparatur) return;
+  
+  // Masukkan data nama, jabatan, deskripsi tugas, NIP, pendidikan, dan masa menjabat ke masing-masing elemen HTML
+  document.getElementById('od-name').textContent  = profilAparatur.name;
+  document.getElementById('od-role').textContent  = profilAparatur.role;
+  document.getElementById('od-desc').textContent  = profilAparatur.desc;
+  document.getElementById('od-nip').textContent   = profilAparatur.nip;
+  document.getElementById('od-edu').textContent   = profilAparatur.edu;
+  document.getElementById('od-since').textContent = profilAparatur.since;
+  
+  // Mengambil elemen panel detail
+  const panelDetail = document.getElementById('org-detail');
+  
+  // Tambahkan kelas 'show' agar CSS menampilkan panel detail tersebut
+  panelDetail.classList.add('show');
+  
+  // Buat efek scroll otomatis bergeser ke area panel detail agar terlihat langsung oleh pengguna
+  setTimeout(() => panelDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
 }
 </script>
 </body>
