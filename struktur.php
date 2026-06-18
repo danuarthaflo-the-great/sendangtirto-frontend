@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Struktur Organisasi – Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -17,7 +18,7 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="hero-anim">
-      <span class="stag" style="color:var(--emas-light)">🏛️ Pemerintahan</span>
+      <span class="stag" style="color:var(--emas-light)"><i class="fa-solid fa-building-columns"></i> Pemerintahan</span>
       <h1>Struktur Organisasi</h1>
       <p>Aparatur Kalurahan Sendangtirto periode 2021–2026. Klik kartu untuk melihat detail tugas dan informasi jabatan.</p>
     </div>
@@ -34,7 +35,7 @@
         <div style="display:flex;justify-content:center">
           <div class="ocard top" onclick="showDetail('lurah')">
             <div class="ocard-pin">Pimpinan</div>
-            <div class="ocard-avatar">👨‍💼</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user-tie"></i></div>
             <div class="ocard-name">Sardjono, S.IP</div>
             <div class="ocard-role">Lurah Sendangtirto</div>
           </div>
@@ -44,7 +45,7 @@
 
         <div style="display:flex;justify-content:center">
           <div class="ocard sekretaris" onclick="showDetail('sekretaris')">
-            <div class="ocard-avatar">👩‍💼</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user-tie"></i></div>
             <div class="ocard-name">Dra. Sri Mulyani</div>
             <div class="ocard-role">Sekretaris Kalurahan</div>
           </div>
@@ -60,22 +61,22 @@
 
         <div class="conn-branches" style="margin-top:28px">
           <div class="ocard" onclick="showDetail('pemerintahan')">
-            <div class="ocard-avatar">🏛️</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-building-columns"></i></div>
             <div class="ocard-name">Agung Prihattanto</div>
             <div class="ocard-role">Kasi Pemerintahan</div>
           </div>
           <div class="ocard" onclick="showDetail('kesra')">
-            <div class="ocard-avatar">🤝</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-handshake"></i></div>
             <div class="ocard-name">Haryanti, S.Sos</div>
             <div class="ocard-role">Kasi Kesra</div>
           </div>
           <div class="ocard" onclick="showDetail('pelayanan')">
-            <div class="ocard-avatar">📋</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-clipboard-list"></i></div>
             <div class="ocard-name">Budi Santoso</div>
             <div class="ocard-role">Kasi Pelayanan</div>
           </div>
           <div class="ocard" onclick="showDetail('keuangan')">
-            <div class="ocard-avatar">💰</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-coins"></i></div>
             <div class="ocard-name">Retno Wulandari</div>
             <div class="ocard-role">Kaur Keuangan</div>
           </div>
@@ -85,27 +86,27 @@
 
         <div class="conn-branches">
           <div class="ocard staf" onclick="showDetail('staf1')">
-            <div class="ocard-avatar">👤</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Awan Prabowo</div>
             <div class="ocard-role">Dukuh Dawukan</div>
           </div>
           <div class="ocard staf" onclick="showDetail('staf2')">
-            <div class="ocard-avatar">👤</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Slamet Riyadi</div>
             <div class="ocard-role">Dukuh Karang</div>
           </div>
           <div class="ocard staf" onclick="showDetail('staf3')">
-            <div class="ocard-avatar">👤</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Marsiyem</div>
             <div class="ocard-role">Dukuh Kadipolo</div>
           </div>
           <div class="ocard staf" onclick="showDetail('staf4')">
-            <div class="ocard-avatar">👤</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Sugeng Wahyudi</div>
             <div class="ocard-role">Dukuh Nayan</div>
           </div>
           <div class="ocard staf" onclick="showDetail('staf5')">
-            <div class="ocard-avatar">👤</div>
+            <div class="ocard-avatar"><i class="fa-solid fa-user"></i></div>
             <div class="ocard-name">Tri Wibowo</div>
             <div class="ocard-role">Staf Administrasi</div>
           </div>

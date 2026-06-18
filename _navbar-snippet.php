@@ -27,13 +27,13 @@
 </nav>
 
 <div class="nav-drawer">
-  <a href="index.php"><span class="drawer-icon">🏠</span> Beranda</a>
-  <a href="statistik.php"><span class="drawer-icon">📊</span> Statistik Penduduk</a>
-  <a href="struktur.php"><span class="drawer-icon">🏛️</span> Struktur Organisasi</a>
-  <a href="layanan.php"><span class="drawer-icon">⚙️</span> Layanan</a>
-  <a href="berita.php"><span class="drawer-icon">📰</span> Berita & Kegiatan</a>
-  <a href="pengumuman.php"><span class="drawer-icon">📢</span> Pengumuman</a>
-  <a href="kontak.php"><span class="drawer-icon">📍</span> Kontak</a>
-  <a href="#" class="drawer-cta">🖥️ Layanan Online</a>
+  <a href="index.php"><i class="fa-solid fa-house drawer-icon"></i> Beranda</a>
+  <a href="statistik.php"><i class="fa-solid fa-chart-column drawer-icon"></i> Statistik Penduduk</a>
+  <a href="struktur.php"><i class="fa-solid fa-building-columns drawer-icon"></i> Struktur Organisasi</a>
+  <a href="layanan.php"><i class="fa-solid fa-gear drawer-icon"></i> Layanan</a>
+  <a href="berita.php"><i class="fa-solid fa-newspaper drawer-icon"></i> Berita & Kegiatan</a>
+  <a href="pengumuman.php"><i class="fa-solid fa-bullhorn drawer-icon"></i> Pengumuman</a>
+  <a href="kontak.php"><i class="fa-solid fa-location-dot drawer-icon"></i> Kontak</a>
+  <a href="#" class="drawer-cta"><i class="fa-solid fa-desktop"></i> Layanan Online</a>
 </div>
 <div class="nav-overlay"></div>

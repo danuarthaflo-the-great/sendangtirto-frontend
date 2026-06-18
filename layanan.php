@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Layanan Administrasi – Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -64,7 +65,7 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="hero-anim">
-      <span class="stag" style="color:var(--emas-light)">⚙️ Pelayanan Publik</span>
+      <span class="stag" style="color:var(--emas-light)"><i class="fa-solid fa-gear"></i> Pelayanan Publik</span>
       <h1>Layanan Administrasi</h1>
       <p>Semua layanan administrasi kependudukan Kalurahan Sendangtirto. Gratis dan tidak dipungut biaya apapun.</p>
     </div>
@@ -76,7 +77,7 @@
     </div>
 
     <div class="section-header fu">
-      <span class="stag">📋 Tersedia</span>
+      <span class="stag"><i class="fa-solid fa-clipboard-list"></i> Tersedia</span>
       <h2 class="stitle">Jenis Layanan</h2>
       <p class="ssub">Klik pada layanan untuk melihat persyaratan lengkap dan estimasi waktu penyelesaian.</p>
     </div>
@@ -85,7 +86,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">📋</div>
+          <div class="licon"><i class="fa-solid fa-clipboard-list"></i></div>
           <div><h3>Surat Keterangan Domisili</h3><p>Untuk keperluan sekolah, pekerjaan, dan administrasi</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -104,7 +105,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">👶</div>
+          <div class="licon"><i class="fa-solid fa-baby"></i></div>
           <div><h3>Pengantar Akta Kelahiran</h3><p>Melalui Dukcapil Kabupaten Sleman</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -124,7 +125,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">💍</div>
+          <div class="licon"><i class="fa-solid fa-ring"></i></div>
           <div><h3>Surat Pengantar Nikah (N1–N4)</h3><p>Untuk pernikahan di KUA Kapanewon Berbah</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -144,7 +145,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">🏠</div>
+          <div class="licon"><i class="fa-solid fa-house"></i></div>
           <div><h3>Perubahan KK & KTP-el</h3><p>Penambahan, pengurangan anggota, perubahan data</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -163,7 +164,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">📜</div>
+          <div class="licon"><i class="fa-solid fa-scroll"></i></div>
           <div><h3>Surat Keterangan Usaha</h3><p>Untuk UMKM, perizinan, dan perbankan</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -182,7 +183,7 @@
 
       <div class="lcard-detail fu">
         <div class="lcard-detail-header">
-          <div class="licon">💊</div>
+          <div class="licon"><i class="fa-solid fa-capsules"></i></div>
           <div><h3>SKTM & Rekomendasi Sosial</h3><p>Untuk beasiswa, kesehatan, dan bansos</p></div>
         </div>
         <div class="lcard-divider"></div>
@@ -203,7 +204,7 @@
 
   <section style="background:var(--putih)">
     <div class="section-header fu">
-      <span class="stag">🔄 Prosedur</span>
+      <span class="stag"><i class="fa-solid fa-arrows-rotate"></i> Prosedur</span>
       <h2 class="stitle">Alur Pengajuan Layanan</h2>
       <p class="ssub">Ikuti langkah-langkah berikut untuk memproses permohonan administrasi Anda.</p>
     </div>
@@ -226,7 +227,7 @@
           <div><h4>Verifikasi dan Proses</h4><p>Petugas akan memeriksa kelengkapan dokumen dan memproses permohonan Anda.</p></div>
         </div>
         <div class="alur-step fu">
-          <div class="step-num" style="background:var(--hijau)">✓</div>
+          <div class="step-num" style="background:var(--hijau)"><i class="fa-solid fa-check"></i></div>
           <div><h4>Ambil Surat / Dokumen</h4><p>Surat atau dokumen yang dimohonkan akan diserahkan sesuai estimasi waktu penyelesaian yang telah ditentukan.</p></div>
         </div>
       </div>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Jempol Bapak – Berita Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -24,13 +25,13 @@
     <div class="detail-wrapper">
 
       <article class="detail-article fu">
-        <div class="detail-hero-img">🏘️</div>
+        <div class="detail-hero-img"><i class="fa-solid fa-house-chimney-window"></i></div>
 
         <div class="detail-meta">
           <span class="badge badge-light">Pelayanan Warga</span>
-          <span>📅 21 April 2026</span>
-          <span>✍️ Redaksi Kalurahan</span>
-          <span>👁 248 dibaca</span>
+          <span><i class="fa-solid fa-calendar-days"></i> 21 April 2026</span>
+          <span><i class="fa-solid fa-pen-to-square"></i> Redaksi Kalurahan</span>
+          <span><i class="fa-solid fa-eye"></i> 248 dibaca</span>
         </div>
 
         <h1 class="detail-title">
@@ -66,8 +67,8 @@
         </div>
 
         <div style="display:flex;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid rgba(15,52,96,0.1);gap:16px;flex-wrap:wrap">
-          <a href="berita.php" class="btn-outline" style="font-size:13px">← Kembali ke Berita</a>
-          <a href="berita-detail.php" class="btn-primary" style="font-size:13px">Artikel Berikutnya →</a>
+          <a href="berita.php" class="btn-outline" style="font-size:13px"><i class="fa-solid fa-arrow-left"></i> Kembali ke Berita</a>
+          <a href="berita-detail.php" class="btn-primary" style="font-size:13px">Artikel Berikutnya <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -75,31 +76,31 @@
         <div class="sidebar-card">
           <h4>Berita Terkait</h4>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb">🤝</div>
+            <div class="sidebar-thumb"><i class="fa-solid fa-handshake"></i></div>
             <div>
               <h5>Penyaluran BLT-DD untuk 52 KPM</h5>
-              <span>📅 31 Mar 2026</span>
+              <span><i class="fa-solid fa-calendar-days"></i> 31 Mar 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb">📜</div>
+            <div class="sidebar-thumb"><i class="fa-solid fa-scroll"></i></div>
             <div>
               <h5>Sosialisasi Adminduk Kapanewon Berbah</h5>
-              <span>📅 24 Feb 2026</span>
+              <span><i class="fa-solid fa-calendar-days"></i> 24 Feb 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb">🛡️</div>
+            <div class="sidebar-thumb"><i class="fa-solid fa-shield-halved"></i></div>
             <div>
               <h5>Pembinaan Satlinmas 2025</h5>
-              <span>📅 15 Mar 2026</span>
+              <span><i class="fa-solid fa-calendar-days"></i> 15 Mar 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb">🕌</div>
+            <div class="sidebar-thumb"><i class="fa-solid fa-mosque"></i></div>
             <div>
               <h5>Pengajian & Syawalan Pamong</h5>
-              <span>📅 3 Apr 2026</span>
+              <span><i class="fa-solid fa-calendar-days"></i> 3 Apr 2026</span>
             </div>
           </div>
         </div>
@@ -107,12 +108,12 @@
         <div class="sidebar-card">
           <h4>Info Kalurahan</h4>
           <div style="font-size:13px;color:var(--muted);line-height:1.8">
-            <p>📍 Jl. Berbah KM 2, Sendangtirto</p>
-            <p>📞 (0274) 497-1234</p>
-            <p>🕐 Sen–Jum: 08.00–15.30</p>
+            <p><i class="fa-solid fa-location-dot"></i> Jl. Berbah KM 2, Sendangtirto</p>
+            <p><i class="fa-solid fa-phone"></i> (0274) 497-1234</p>
+            <p><i class="fa-solid fa-clock"></i> Sen–Jum: 08.00–15.30</p>
             <p style="margin-top:12px">
               <a href="layanan.php" class="btn-primary" style="display:block;text-align:center;font-size:13px">
-                Lihat Layanan →
+                Lihat Layanan <i class="fa-solid fa-arrow-right"></i>
               </a>
             </p>
           </div>

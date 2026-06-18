@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Hubungi Kami – Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -42,7 +43,7 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="hero-anim">
-      <span class="stag" style="color:var(--emas-light)">📍 Pusat Bantuan</span>
+      <span class="stag" style="color:var(--emas-light)"><i class="fa-solid fa-location-dot"></i> Pusat Bantuan</span>
       <h1>Hubungi Kami</h1>
       <p>Kirimkan pertanyaan, pengaduan, atau aspirasi Anda langsung kepada Pemerintah Kalurahan Sendangtirto.</p>
     </div>
@@ -56,11 +57,11 @@
     <div class="kontak-grid" style="margin-top: 32px;">
       <div class="kinfo fu">
         <h3>Informasi Kontak Resmi</h3>
-        <div class="krow"><div class="kicon">📍</div><div><h5>ALAMAT</h5><p>Jl. Berbah KM 2, Sendangtirto,<br/>Kec. Berbah, Kab. Sleman, DIY 55573</p></div></div>
-        <div class="krow"><div class="kicon">📞</div><div><h5>TELEPON</h5><p>(0274) 497-1234</p></div></div>
-        <div class="krow"><div class="kicon">📧</div><div><h5>EMAIL</h5><p>devsleman@sendangtirtosid.slemankab.go.id</p></div></div>
-        <div class="krow"><div class="kicon">🌐</div><div><h5>WEBSITE</h5><p>sendangtirtosid.slemankab.go.id</p></div></div>
-        <div class="krow"><div class="kicon">🕐</div><div><h5>JAM PELAYANAN</h5><p>Senin–Jumat: 08.00 – 15.30 WIB<br/>Istirahat: 12.00 – 13.00 WIB</p></div></div>
+        <div class="krow"><div class="kicon"><i class="fa-solid fa-location-dot"></i></div><div><h5>ALAMAT</h5><p>Jl. Berbah KM 2, Sendangtirto,<br/>Kec. Berbah, Kab. Sleman, DIY 55573</p></div></div>
+        <div class="krow"><div class="kicon"><i class="fa-solid fa-phone"></i></div><div><h5>TELEPON</h5><p>(0274) 497-1234</p></div></div>
+        <div class="krow"><div class="kicon"><i class="fa-solid fa-envelope"></i></div><div><h5>EMAIL</h5><p>devsleman@sendangtirtosid.slemankab.go.id</p></div></div>
+        <div class="krow"><div class="kicon"><i class="fa-solid fa-globe"></i></div><div><h5>WEBSITE</h5><p>sendangtirtosid.slemankab.go.id</p></div></div>
+        <div class="krow"><div class="kicon"><i class="fa-solid fa-clock"></i></div><div><h5>JAM PELAYANAN</h5><p>Senin–Jumat: 08.00 – 15.30 WIB<br/>Istirahat: 12.00 – 13.00 WIB</p></div></div>
       </div>
       
       <div class="kform fu fu-d1">
@@ -102,7 +103,7 @@
             <div id="err-pesan" class="error-msg">Pesan tidak boleh kosong!</div>
           </div>
 
-          <button type="submit" class="fsub">Kirim Pesan ✉️</button>
+          <button type="submit" class="fsub">Kirim Pesan <i class="fa-solid fa-paper-plane"></i></button>
         </form>
       </div>
     </div>

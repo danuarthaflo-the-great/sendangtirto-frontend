@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Statistik Penduduk – Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -18,7 +19,7 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="hero-anim">
-      <span class="stag" style="color:var(--emas-light)">📊 Data Resmi 2025</span>
+      <span class="stag" style="color:var(--emas-light)"><i class="fa-solid fa-chart-simple"></i> Data Resmi 2025</span>
       <h1>Statistik Kependudukan</h1>
       <p>Data kependudukan Kalurahan Sendangtirto diperbarui secara berkala berdasarkan laporan Dinas Dukcapil Kabupaten Sleman.</p>
     </div>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Pengumuman Resmi – Kalurahan Sendangtirto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
   <link rel="stylesheet" href="css/navbar.css"/>
   <link rel="stylesheet" href="css/components.css"/>
@@ -17,7 +18,7 @@
   <div class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="hero-anim">
-      <span class="stag" style="color:var(--emas-light)">📢 Resmi</span>
+      <span class="stag" style="color:var(--emas-light)"><i class="fa-solid fa-bullhorn"></i> Resmi</span>
       <h1>Pengumuman Kalurahan</h1>
       <p>Informasi dan edaran resmi terbaru yang perlu diketahui oleh seluruh warga Kalurahan Sendangtirto.</p>
     </div>
