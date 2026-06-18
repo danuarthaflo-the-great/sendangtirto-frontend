@@ -12,8 +12,8 @@
   display: flex; 
   align-items: center; /* Konten tegak rata tengah */
   padding: 0 5%; 
-  padding-top: calc(var(--nav-h) + 40px);
-  padding-bottom: 120px;
+  padding-top: calc(var(--nav-h) + 20px);
+  padding-bottom: 80px;
   position: relative; 
   overflow: hidden; /* Sembunyikan jika ada elemen dekorasi melampaui batas hero */
 }
@@ -60,7 +60,7 @@
   bottom: 0; 
   left: 0; 
   right: 0; 
-  height: 80px;
+  height: 50px;
   background: linear-gradient(to top, var(--krem), transparent);
   pointer-events: none;
 }
