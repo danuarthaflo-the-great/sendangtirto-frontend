@@ -625,7 +625,7 @@
     <li><a href="../berita.php">Berita</a></li>
     <li><a href="pengumuman-copy.html" class="active">Pengumuman</a></li>
     <li><a href="kontak-copy.html">Kontak</a></li>
-    <li><a href="https://wa.me/628562746055" target="_blank" class="nav-cta" style="display: inline-block;">Layanan Online</a></li>
+    <li><a href="#" onclick="bukaLayananOnline(event)" class="nav-cta" style="display: inline-block;">Layanan Online</a></li>
   </ul>
 
   <button class="nav-toggle" aria-label="Menu">
@@ -641,7 +641,7 @@
   <a href="../berita.php"><i class="fa-solid fa-newspaper drawer-icon"></i> Berita & Kegiatan</a>
   <a href="pengumuman-copy.html" class="active"><i class="fa-solid fa-bullhorn drawer-icon"></i> Pengumuman</a>
   <a href="kontak-copy.html"><i class="fa-solid fa-location-dot drawer-icon"></i> Kontak</a>
-  <a href="https://wa.me/628562746055" target="_blank" class="drawer-cta"><i class="fa-solid fa-desktop"></i> Layanan Online</a>
+  <a href="#" onclick="bukaLayananOnline(event)" class="drawer-cta"><i class="fa-solid fa-desktop"></i> Layanan Online</a>
 </div>
 <div class="nav-overlay"></div>
 
@@ -854,6 +854,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+</script>
+
+<script>
+/* ==========================================================================
+   automail.js (Inlined)
+   ========================================================================== */
+// Fungsi untuk membuka WhatsApp dengan pesan otomatis ketika tombol diklik
+function bukaLayananOnline(kejadian) {
+  // Mencegah tindakan default dari link agar tidak menggeser halaman ke atas
+  if (kejadian) {
+    kejadian.preventDefault();
+  }
+
+  // Nomor WhatsApp tujuan pelayanan desa (62 menggantikan angka 0 di awal nomor)
+  const nomorWhatsApp = "628562746055";
+
+  // Pesan teks otomatis yang akan langsung terisi di kolom obrolan WhatsApp
+  const pesanTeksOtomatis = "Halo, Idris selamat siang .....";
+
+  // Mengubah spasi dan karakter khusus pesan agar aman dikirim melalui link internet (URL Encoding)
+  const pesanTeksFormatUrl = encodeURIComponent(pesanTeksOtomatis);
+
+  // Menyusun link lengkap WhatsApp beserta nomor tujuan dan pesan teksnya
+  const tautanWhatsAppLengkap = `https://wa.me/${nomorWhatsApp}?text=${pesanTeksFormatUrl}`;
+
+  // Membuka tautan WhatsApp yang telah disusun di tab baru browser
+  window.open(tautanWhatsAppLengkap, "_blank");
+}
 </script>
 </body>
 </html>

@@ -18,7 +18,7 @@
     <li><a href="berita.php" class="<?= ($page == 'berita.php' || $page == 'berita-detail.php') ? 'active' : '' ?>">Berita</a></li>
     <li><a href="pengumuman.php" class="<?= $page == 'pengumuman.php' ? 'active' : '' ?>">Pengumuman</a></li>
     <li><a href="kontak.php" class="<?= $page == 'kontak.php' ? 'active' : '' ?>">Kontak</a></li>
-    <li><a href="https://wa.me/628562746055" target="_blank" class="nav-cta" style="display: inline-block;">Layanan Online</a></li>
+    <li><a href="#" onclick="bukaLayananOnline(event)" class="nav-cta" style="display: inline-block;">Layanan Online</a></li>
   </ul>
 
   <button class="nav-toggle" aria-label="Menu">
@@ -34,6 +34,7 @@
   <a href="berita.php"><i class="fa-solid fa-newspaper drawer-icon"></i> Berita & Kegiatan</a>
   <a href="pengumuman.php"><i class="fa-solid fa-bullhorn drawer-icon"></i> Pengumuman</a>
   <a href="kontak.php"><i class="fa-solid fa-location-dot drawer-icon"></i> Kontak</a>
-  <a href="https://wa.me/628562746055" target="_blank" class="drawer-cta"><i class="fa-solid fa-desktop"></i> Layanan Online</a>
+  <a href="#" onclick="bukaLayananOnline(event)" class="drawer-cta"><i class="fa-solid fa-desktop"></i> Layanan Online</a>
 </div>
 <div class="nav-overlay"></div>
+<script src="js/automail.js"></script>
