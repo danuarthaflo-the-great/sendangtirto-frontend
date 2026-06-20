@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Berita & Kegiatan – Kalurahan Sendangtirto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link rel="stylesheet" href="css/main.css?v=1.1"/>
-  <link rel="stylesheet" href="css/navbar.css?v=1.1"/>
-  <link rel="stylesheet" href="css/components.css?v=1.1"/>
+  <link rel="stylesheet" href="css/main.css?v=1.2"/>
+  <link rel="stylesheet" href="css/navbar.css?v=1.2"/>
+  <link rel="stylesheet" href="css/components.css?v=1.2"/>
 </head>
 <body>
 
@@ -42,7 +42,9 @@
       <button class="filter-tab" onclick="saringKategoriBerita('keagamaan', this)">Keagamaan</button>
       <button class="filter-tab" onclick="saringKategoriBerita('pkk', this)">PKK</button>
       <button class="filter-tab" onclick="saringKategoriBerita('keamanan', this)">Keamanan</button>
-      <div class="berita-list-grid auto-stagger" id="beritaGrid">
+    </div>
+
+    <div class="berita-list-grid auto-stagger" id="beritaGrid">
 
       <div class="blist-card fu" data-kategori="pemerintahan">
         <div class="blist-thumb"><img src="img/thum-Jempol Bapak Dekatkan Warga Padukuhan Kadipolo dan Sribit Bayar Pajak PBB.png" alt="Jempol Bapak"></div>
@@ -166,12 +168,7 @@
       <p>Tidak ada berita yang sesuai pencarian.</p>
     </div>
 
-    <div class="pagination fu">
-      <button class="page-btn active">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
+    <div class="pagination fu"></div>
   </section>
 
 </div>
@@ -181,59 +178,139 @@
 <script src="js/navbar.js"></script>
 <script src="js/animations.js"></script>
 <script>
-// Fungsi untuk menyaring berita berdasarkan kategori yang dipilih
-function saringKategoriBerita(kategoriPilihan, tombolPilihan) {
-  // Ambil semua tombol filter dan hapus kelas 'active' dari tombol tersebut
-  document.querySelectorAll('.filter-tab').forEach(tombolTab => {
-    // Menghapus kelas 'active' pada tab agar tidak terlihat aktif
-    tombolTab.classList.remove('active');
-  });
-  // Tambahkan kelas 'active' ke tombol filter yang baru saja di-klik oleh pengguna
-  tombolPilihan.classList.add('active');
-  // Ambil seluruh elemen kartu berita di dalam grid berita
-  const kumpulanKartu = document.querySelectorAll('#beritaGrid .blist-card');
-  // Variabel penampung untuk menghitung jumlah kartu berita yang lolos saringan
-  let jumlahKartuTerlihat = 0;
-  // Lakukan perulangan untuk memeriksa kesesuaian kategori pada setiap kartu berita
-  kumpulanKartu.forEach(kartu => {
-    // Periksa apakah kategori pilihan adalah 'semua' atau cocok dengan atribut kategori pada kartu
-    const apakahKategoriCocok = kategoriPilihan === 'semua' || kartu.dataset.kategori === kategoriPilihan;
-    // Tampilkan kartu jika cocok, atau sembunyikan jika tidak cocok dengan kategori pilihan
-    kartu.style.display = apakahKategoriCocok ? '' : 'none';
-    // Jika kartu tersebut cocok dan ditampilkan, tambahkan nilai penghitung kartu terlihat
-    if (apakahKategoriCocok) {
-      // Tambahkan 1 ke variabel jumlah kartu terlihat
-      jumlahKartuTerlihat++;
-    }
-  });
-  // Jika tidak ada kartu berita yang terlihat, tampilkan pesan kosong. Jika ada, sembunyikan pesan tersebut
-  document.getElementById('noResult').style.display = jumlahKartuTerlihat === 0 ? 'block' : 'none';
-}
+// Variabel global untuk menyimpan status aktif pencarian, kategori, dan halaman
+let kategoriAktif = "semua";
+let halamanAktif = 1;
+const jumlahItemPerHalaman = 6;
 
-// Fungsi untuk melakukan pencarian berita berdasarkan teks input pengguna
-function lakukanPencarianBerita() {
-  // Ambil nilai teks dari kolom input pencarian, ubah ke huruf kecil, lalu bersihkan spasi di awal/akhir
+// Fungsi utama untuk menyaring data berita dan mengelola paginasi secara dinamis
+function perbaruiTampilanBerita() {
+  // Ambil nilai kata kunci dari kolom input pencarian secara realtime
   const kataKunciCari = document.getElementById('searchInput').value.toLowerCase().trim();
   // Ambil semua elemen kartu berita di dalam grid berita
   const kumpulanKartu = document.querySelectorAll('#beritaGrid .blist-card');
-  // Variabel penampung untuk menghitung jumlah kartu berita yang lolos pencarian
-  let jumlahKartuTerlihat = 0;
-  // Lakukan perulangan untuk mencari teks kata kunci di dalam setiap kartu berita
+  
+  // Array untuk menyimpan kartu-kartu berita yang cocok dengan kriteria filter dan pencarian
+  const kartuCocok = [];
+
+  // Lakukan perulangan untuk mengecek kecocokan kategori dan kata kunci pada setiap kartu
   kumpulanKartu.forEach(kartu => {
-    // Ambil seluruh isi teks dari kartu berita tersebut dan ubah menjadi huruf kecil
+    // Cek kecocokan kategori kartu dengan kategori aktif yang dipilih pengguna
+    const apakahKategoriCocok = kategoriAktif === "semua" || kartu.dataset.kategori === kategoriAktif;
+    // Ambil isi teks dari kartu berita untuk dicocokkan dengan kata kunci pencarian
     const isiTeksKartu = kartu.textContent.toLowerCase();
-    // Periksa apakah kata kunci kosong, atau apakah isi teks kartu mengandung kata kunci pencarian
+    // Cek apakah isi teks kartu mengandung kata kunci pencarian yang dimasukkan pengguna
     const apakahKataKunciCocok = !kataKunciCari || isiTeksKartu.includes(kataKunciCari);
-    // Tampilkan kartu jika cocok dengan kata kunci, atau sembunyikan jika tidak cocok
-    kartu.style.display = apakahKataKunciCocok ? '' : 'none';
-    // Jika kartu tersebut cocok dan ditampilkan, tambahkan nilai penghitung kartu terlihat
-    if (apakahKataKunciCocok) {
-      // Tambahkan 1 ke variabel jumlah kartu terlihat
-      jumlahKartuTerlihat++;
+
+    // Jika kartu memenuhi kedua kriteria saringan tersebut
+    if (apakahKategoriCocok && apakahKataKunciCocok) {
+      // Masukkan kartu yang cocok ke dalam array penampung
+      kartuCocok.push(kartu);
+    } else {
+      // Jika tidak cocok, langsung sembunyikan kartu tersebut dari layar
+      kartu.style.display = "none";
     }
   });
-  // Jika tidak ada kartu berita yang cocok dengan kata kunci, tampilkan pesan kosong. Jika ada, sembunyikan
-  document.getElementById('noResult').style.display = jumlahKartuTerlihat === 0 ? 'block' : 'none';
+
+  // Hitung total halaman yang dibutuhkan berdasarkan jumlah kartu yang cocok dibagi jumlah item per halaman
+  const totalHalaman = Math.ceil(kartuCocok.length / jumlahItemPerHalaman);
+
+  // Jika halaman aktif yang saat ini dipilih melebihi total halaman yang tersedia
+  if (halamanAktif > totalHalaman) {
+    // Reset halaman aktif kembali ke halaman pertama
+    halamanAktif = 1;
+  }
+
+  // Tentukan indeks awal dan indeks akhir kartu yang akan ditampilkan di halaman saat ini
+  const indeksAwal = (halamanAktif - 1) * jumlahItemPerHalaman;
+  const indeksAkhir = halamanAktif * jumlahItemPerHalaman;
+
+  // Lakukan perulangan pada kartu-kartu yang cocok untuk menampilkan kartu sesuai halaman aktif
+  kartuCocok.forEach((kartu, indeks) => {
+    // Jika indeks kartu berada dalam rentang indeks halaman aktif saat ini
+    if (indeks >= indeksAwal && indeks < indeksAkhir) {
+      // Tampilkan kartu berita tersebut
+      kartu.style.display = "";
+    } else {
+      // Sembunyikan kartu berita yang berada di luar halaman aktif
+      kartu.style.display = "none";
+    }
+  });
+
+  // Tampilkan atau sembunyikan pesan "Tidak ada berita" berdasarkan ada tidaknya kartu yang cocok
+  document.getElementById('noResult').style.display = kartuCocok.length === 0 ? "block" : "none";
+
+  // Perbarui tombol-tombol paginasi di layar secara dinamis
+  buatTombolPaginasi(totalHalaman);
+}
+
+// Fungsi untuk membuat tombol-tombol halaman (paginasi) secara dinamis
+function buatTombolPaginasi(totalHalaman) {
+  // Ambil elemen wadah tombol paginasi dari HTML
+  const wadahPaginasi = document.querySelector('.pagination');
+  // Bersihkan seluruh tombol halaman lama di dalam wadah
+  wadahPaginasi.innerHTML = "";
+
+  // Jika total halaman hanya 1 atau kurang dari itu, sembunyikan atau tidak perlu tampilkan tombol paginasi
+  if (totalHalaman <= 1) {
+    // Hentikan fungsi karena paginasi tidak diperlukan
+    return;
+  }
+
+  // Lakukan perulangan sebanyak total halaman untuk menggambar tombol angka
+  for (let i = 1; i <= totalHalaman; i++) {
+    // Buat elemen tombol baru di memori
+    const tombolHalaman = document.createElement('button');
+    // Berikan kelas CSS '.page-btn' pada tombol tersebut
+    tombolHalaman.className = "page-btn";
+    // Tulis angka halaman di dalam tombol
+    tombolHalaman.textContent = i;
+
+    // Jika angka tombol sama dengan halaman aktif saat ini
+    if (i === halamanAktif) {
+      // Tambahkan kelas '.active' agar tombol memiliki tampilan aktif/berwarna
+      tombolHalaman.classList.add('active');
+    }
+
+    // Daftarkan aksi klik pada tombol halaman baru tersebut
+    tombolHalaman.addEventListener('click', () => {
+      // Ubah status halaman aktif ke halaman yang di-klik
+      halamanAktif = i;
+      // Perbarui tampilan berita sesuai dengan halaman baru
+      perbaruiTampilanBerita();
+      // Gulirkan layar ke atas area daftar berita secara halus agar perubahan halaman langsung terlihat
+      document.getElementById('filterTabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Masukkan tombol halaman baru ke dalam wadah paginasi di HTML
+    wadahPaginasi.appendChild(tombolHalaman);
+  }
+}
+
+// Fungsi pembungkus (wrapper) untuk menyaring kategori berita saat tab kategori di-klik
+function saringKategoriBerita(kategoriPilihan, tombolPilihan) {
+  // Ambil semua tombol kategori tab filter
+  document.querySelectorAll('.filter-tab').forEach(tombolTab => {
+    // Hapus kelas 'active' dari semua tab kategori
+    tombolTab.classList.remove('active');
+  });
+  // Tambahkan kelas 'active' ke tombol kategori yang baru saja di-klik
+  tombolPilihan.classList.add('active');
+  
+  // Ubah status kategori aktif sesuai pilihan pengguna
+  kategoriAktif = kategoriPilihan;
+  // Reset halaman aktif ke halaman 1 setiap kali kategori diubah
+  halamanAktif = 1;
+  // Jalankan fungsi utama perbaruan tampilan berita
+  perbaruiTampilanBerita();
+}
+
+// Fungsi pembungkus (wrapper) untuk pencarian berita saat tombol cari di-klik
+function lakukanPencarianBerita() {
+  // Reset halaman aktif ke halaman 1 setiap kali melakukan pencarian baru
+  halamanAktif = 1;
+  // Jalankan fungsi utama perbaruan tampilan berita
+  perbaruiTampilanBerita();
 }
 
 // Menambahkan event listener keyboard pada input pencarian
@@ -245,18 +322,10 @@ document.getElementById('searchInput').addEventListener('keydown', e => {
   }
 });
 
-// Menambahkan efek klik aktif pada seluruh tombol paginasi halaman
-document.querySelectorAll('.page-btn').forEach(tombolHalaman => {
-  // Daftarkan event klik pada setiap tombol halaman
-  tombolHalaman.addEventListener('click', () => {
-    // Hapus kelas 'active' dari semua tombol halaman terlebih dahulu
-    document.querySelectorAll('.page-btn').forEach(tombolLain => {
-      // Menghapus kelas 'active' pada tombol lain
-      tombolLain.classList.remove('active');
-    });
-    // Tambahkan kelas 'active' ke tombol halaman yang sedang di-klik oleh pengguna
-    tombolHalaman.classList.add('active');
-  });
+// Jalankan perbaruan tampilan berita untuk pertama kali saat halaman selesai dimuat browser
+document.addEventListener('DOMContentLoaded', () => {
+  // Panggil fungsi utama perbaruan tampilan berita
+  perbaruiTampilanBerita();
 });
 </script>
 </body>
