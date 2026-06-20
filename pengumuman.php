@@ -31,39 +31,38 @@
       <span style="color:var(--putih)">Pengumuman</span>
     </div>
 
-    <div class="plist" style="margin-top: 32px;">
-      <div class="pitem fu">
-        <div class="pdot"></div>
-        <div>
-          <h4>Pengumuman Libur dan Cuti Bersama Idul Fitri 1446 H</h4>
-          <p>Pelayanan kalurahan libur 28 Maret–7 April 2026. Layanan darurat tetap tersedia.</p>
-        </div>
-        <div class="pdate">27 Mar 2026</div>
-      </div>
-      <div class="pitem fu fu-d1">
-        <div class="pdot"></div>
-        <div>
-          <h4>Sosialisasi Adminduk & Pencatatan Akta Kematian – Kapanewon Berbah</h4>
-          <p>Warga diimbau melapor maksimal 30 hari sejak kejadian kematian ke kantor kalurahan.</p>
-        </div>
-        <div class="pdate">24 Feb 2026</div>
-      </div>
-      <div class="pitem fu fu-d2">
-        <div class="pdot"></div>
-        <div>
-          <h4>Perekaman e-KTP – Warga Belum Terekam Segera Melapor</h4>
-          <p>Layanan perekaman mobile tersedia setiap Selasa di kantor kalurahan.</p>
-        </div>
-        <div class="pdate">10 Feb 2026</div>
-      </div>
-      <div class="pitem fu fu-d3">
-        <div class="pdot"></div>
-        <div>
-          <h4>Musrenbang Kalurahan Tahun 2026 – Undangan Peserta</h4>
-          <p>Perwakilan RT/RW dimohon hadir di Balai Kalurahan, tepat waktu.</p>
-        </div>
-        <div class="pdate">3 Feb 2026</div>
-      </div>
+    <div style="overflow-x: auto; margin-top: 32px;" class="fu">
+      <table style="width: 100%; border-collapse: collapse; color: var(--putih); text-align: left; font-size: 14px;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--emas); color: var(--emas-light);">
+            <th style="padding: 12px 8px; font-weight: 700; width: 120px;">Tanggal</th>
+            <th style="padding: 12px 8px; font-weight: 700; width: 280px;">Pengumuman</th>
+            <th style="padding: 12px 8px; font-weight: 700;">Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <td style="padding: 16px 8px; font-weight: 600; color: var(--emas-light); vertical-align: top;">27 Mar 2026</td>
+            <td style="padding: 16px 8px; font-weight: 700; vertical-align: top;">Pengumuman Libur dan Cuti Bersama Idul Fitri 1446 H</td>
+            <td style="padding: 16px 8px; color: rgba(255, 255, 255, 0.7); vertical-align: top;">Pelayanan kalurahan libur 28 Maret–7 April 2026. Layanan darurat tetap tersedia.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <td style="padding: 16px 8px; font-weight: 600; color: var(--emas-light); vertical-align: top;">24 Feb 2026</td>
+            <td style="padding: 16px 8px; font-weight: 700; vertical-align: top;">Sosialisasi Adminduk & Pencatatan Akta Kematian – Kapanewon Berbah</td>
+            <td style="padding: 16px 8px; color: rgba(255, 255, 255, 0.7); vertical-align: top;">Warga diimbau melapor maksimal 30 hari sejak kejadian kematian ke kantor kalurahan.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <td style="padding: 16px 8px; font-weight: 600; color: var(--emas-light); vertical-align: top;">10 Feb 2026</td>
+            <td style="padding: 16px 8px; font-weight: 700; vertical-align: top;">Perekaman e-KTP – Warga Belum Terekam Segera Melapor</td>
+            <td style="padding: 16px 8px; color: rgba(255, 255, 255, 0.7); vertical-align: top;">Layanan perekaman mobile tersedia setiap Selasa di kantor kalurahan.</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+            <td style="padding: 16px 8px; font-weight: 600; color: var(--emas-light); vertical-align: top;">3 Feb 2026</td>
+            <td style="padding: 16px 8px; font-weight: 700; vertical-align: top;">Musrenbang Kalurahan Tahun 2026 – Undangan Peserta</td>
+            <td style="padding: 16px 8px; color: rgba(255, 255, 255, 0.7); vertical-align: top;">Perwakilan RT/RW dimohon hadir di Balai Kalurahan, tepat waktu.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
