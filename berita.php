@@ -45,7 +45,7 @@
       <div class="berita-list-grid auto-stagger" id="beritaGrid">
 
       <div class="blist-card fu" data-kategori="pemerintahan">
-        <div class="blist-thumb"><i class="fa-solid fa-house-chimney-window"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Jempol Bapak Dekatkan Warga Padukuhan Kadipolo dan Sribit Bayar Pajak PBB.png" alt="Jempol Bapak"></div>
         <div class="blist-body">
           <span class="badge badge-light">Pelayanan Warga</span>
           <h3>Jempol Bapak: Dekatkan Warga Padukuhan Kadipolo dan Sribit Bayar Pajak PBB</h3>
@@ -58,7 +58,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="sosial">
-        <div class="blist-thumb"><i class="fa-solid fa-handshake"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Penyaluran BLT-DD untuk 52 Keluarga Penerima Manfaat di Gedung Serbaguna.png" alt="BLT-DD"></div>
         <div class="blist-body">
           <span class="badge badge-light">Sosial</span>
           <h3>Penyaluran BLT-DD untuk 52 Keluarga Penerima Manfaat di Gedung Serbaguna</h3>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="keagamaan">
-        <div class="blist-thumb"><i class="fa-solid fa-mosque"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Pengajian Jumat Pagi Dirangkai Syawalan dan Pamitan Calon Jamaah Haji.png" alt="Pengajian"></div>
         <div class="blist-body">
           <span class="badge badge-light">Keagamaan</span>
           <h3>Pengajian Jumat Pagi Dirangkai Syawalan dan Pamitan Calon Jamaah Haji</h3>
@@ -84,7 +84,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="pemerintahan">
-        <div class="blist-thumb"><i class="fa-solid fa-crown"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Lurah dan Pamong Ikuti Mangayubagya 80 Tahun Yuswa Sri Sultan HB X.png" alt="Mangayubagya"></div>
         <div class="blist-body">
           <span class="badge badge-light">Pemerintahan</span>
           <h3>Lurah dan Pamong Ikuti Mangayubagya 80 Tahun Yuswa Sri Sultan HB X</h3>
@@ -97,7 +97,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="pkk">
-        <div class="blist-thumb"><i class="fa-solid fa-people-roof"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Pokja II TP PKK Kalurahan Ikuti Pembinaan Administrasi PKK Kapanewon Berbah.png" alt="Pembinaan PKK"></div>
         <div class="blist-body">
           <span class="badge badge-light">PKK</span>
           <h3>Pokja II TP PKK Kalurahan Ikuti Pembinaan Administrasi PKK Kapanewon Berbah</h3>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="keamanan">
-        <div class="blist-thumb"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Pembinaan Satlinmas 2025 Digelar di Balai Kalurahan Sendangtirto.png" alt="Satlinmas"></div>
         <div class="blist-body">
           <span class="badge badge-light">Keamanan</span>
           <h3>Pembinaan Satlinmas 2025 Digelar di Balai Kalurahan Sendangtirto</h3>
@@ -123,7 +123,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="kesehatan">
-        <div class="blist-thumb"><i class="fa-solid fa-house-medical"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Posyandu Kalurahan Catat Rekor Kunjungan Balita di Bulan April.png" alt="Posyandu"></div>
         <div class="blist-body">
           <span class="badge badge-light">Kesehatan</span>
           <h3>Posyandu Kalurahan Catat Rekor Kunjungan Balita di Bulan April</h3>
@@ -136,7 +136,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="sosial">
-        <div class="blist-thumb"><i class="fa-solid fa-leaf"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Kalurahan dan Lanud Adisutjipto Tinjau Batas Lahan Masjid Sulthoni Wotgaleh.png" alt="Masjid Wotgaleh"></div>
         <div class="blist-body">
           <span class="badge badge-light">Sosial</span>
           <h3>Kalurahan dan Lanud Adisutjipto Tinjau Batas Lahan Masjid Sulthoni Wotgaleh</h3>
@@ -149,7 +149,7 @@
       </div>
 
       <div class="blist-card fu" data-kategori="pemerintahan">
-        <div class="blist-thumb"><i class="fa-solid fa-scroll"></i></div>
+        <div class="blist-thumb"><img src="img/thum-Sosialisasi Administrasi Kependudukan di Kapanewon Berbah.png" alt="Sosialisasi Adminduk"></div>
         <div class="blist-body">
           <span class="badge badge-light">Adminduk</span>
           <h3>Sosialisasi Administrasi Kependudukan di Kapanewon Berbah</h3>

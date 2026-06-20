@@ -25,7 +25,7 @@
     <div class="detail-wrapper">
 
       <article class="detail-article fu">
-        <div class="detail-hero-img"><i class="fa-solid fa-house-chimney-window"></i></div>
+        <div class="detail-hero-img"><img src="img/thum-Jempol Bapak Dekatkan Warga Padukuhan Kadipolo dan Sribit Bayar Pajak PBB.png" alt="Jempol Bapak"></div>
 
         <div class="detail-meta">
           <span class="badge badge-light">Pelayanan Warga</span>
@@ -76,28 +76,28 @@
         <div class="sidebar-card">
           <h4>Berita Terkait</h4>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb"><i class="fa-solid fa-handshake"></i></div>
+            <div class="sidebar-thumb"><img src="img/thum-Penyaluran BLT-DD untuk 52 Keluarga Penerima Manfaat di Gedung Serbaguna.png" alt="BLT-DD"></div>
             <div>
               <h5>Penyaluran BLT-DD untuk 52 KPM</h5>
               <span><i class="fa-solid fa-calendar-days"></i> 31 Mar 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb"><i class="fa-solid fa-scroll"></i></div>
+            <div class="sidebar-thumb"><img src="img/thum-Sosialisasi Administrasi Kependudukan di Kapanewon Berbah.png" alt="Sosialisasi Adminduk"></div>
             <div>
               <h5>Sosialisasi Adminduk Kapanewon Berbah</h5>
               <span><i class="fa-solid fa-calendar-days"></i> 24 Feb 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="sidebar-thumb"><img src="img/thum-Pembinaan Satlinmas 2025 Digelar di Balai Kalurahan Sendangtirto.png" alt="Satlinmas"></div>
             <div>
               <h5>Pembinaan Satlinmas 2025</h5>
               <span><i class="fa-solid fa-calendar-days"></i> 15 Mar 2026</span>
             </div>
           </div>
           <div class="sidebar-news-item" onclick="location.href='berita-detail.php'">
-            <div class="sidebar-thumb"><i class="fa-solid fa-mosque"></i></div>
+            <div class="sidebar-thumb"><img src="img/thum-Pengajian Jumat Pagi Dirangkai Syawalan dan Pamitan Calon Jamaah Haji.png" alt="Pengajian"></div>
             <div>
               <h5>Pengajian & Syawalan Pamong</h5>
               <span><i class="fa-solid fa-calendar-days"></i> 3 Apr 2026</span>
