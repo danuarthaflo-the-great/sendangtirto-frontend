@@ -107,6 +107,17 @@
         </form>
       </div>
     </div>
+
+    <!-- PETA LOKASI KANTOR KALURAHAN -->
+    <div class="map-card-container fu fu-d2">
+      <div class="map-card">
+        <div class="map-card-header">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3>Peta Lokasi Kantor Kalurahan</h3>
+        </div>
+        <div id="map" class="map-canvas"></div>
+      </div>
+    </div>
   </section>
 
 </div>
@@ -173,7 +184,50 @@ formulirKontak.addEventListener("submit", function (kejadianSubmit) {
     }, 4000);
   }
 });
+
+// Fungsi untuk memuat dan menginisialisasi Google Maps secara dinamis
+function inisialisasiPeta() {
+  // Titik koordinat Kantor Kalurahan Sendangtirto
+  const lokasiKantor = { lat: -7.820570, lng: 110.430436 };
+  
+  // Membuat objek peta baru pada elemen dengan id 'map'
+  const peta = new google.maps.Map(document.getElementById("map"), {
+    zoom: 16, // Tingkat perbesaran peta
+    center: lokasiKantor, // Pusat peta
+    mapTypeControl: true,
+    streetViewControl: false,
+  });
+
+  // Membuat penanda (marker) pada peta
+  const penanda = new google.maps.Marker({
+    position: lokasiKantor,
+    map: peta,
+    title: "Kantor Kalurahan Sendangtirto",
+    animation: google.maps.Animation.DROP
+  });
+
+  // Jendela informasi kecil yang muncul saat penanda di-klik
+  const jendelaInformasi = new google.maps.InfoWindow({
+    content: `
+      <div style="font-family: 'Plus Jakarta Sans', sans-serif; padding: 6px; max-width: 250px;">
+        <h4 style="margin: 0 0 6px 0; color: #0f3460; font-size: 14px; font-weight: 700;">Kantor Kalurahan Sendangtirto</h4>
+        <p style="margin: 0; color: #6b7a8d; font-size: 12px; line-height: 1.5;">Jl. Berbah KM 2, Sendangtirto, Kapanewon Berbah, Sleman, DIY 55573</p>
+      </div>
+    `
+  });
+
+  // Event listener saat penanda diklik untuk menampilkan jendela informasi
+  penanda.addListener("click", function() {
+    jendelaInformasi.open(peta, penanda);
+  });
+}
+
+// Daftarkan fungsi ke jendela global agar dapat diakses oleh callback Google Maps
+window.inisialisasiPeta = inisialisasiPeta;
 </script>
+
+<!-- Script API Google Maps dengan Kunci API yang Disediakan -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy3X_yxER30dO1yjukHgbLuYV9uzrTdRQ&callback=inisialisasiPeta" async defer></script>
 
 </body>
 </html>

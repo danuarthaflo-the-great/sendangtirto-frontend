@@ -860,6 +860,46 @@
 }
 
 
+/* ══ 8b. PETA LOKASI (GOOGLE MAPS CARD) ══ */
+.map-card-container {
+  margin-top: 48px;
+}
+.map-card {
+  background: var(--putih);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(15,52,96,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.map-card-header {
+  padding: 20px 24px;
+  background: var(--biru);
+  color: var(--putih);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.map-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--putih);
+}
+.map-card-header i {
+  color: var(--emas-light);
+  font-size: 20px;
+}
+.map-canvas {
+  width: 100%;
+  height: 400px;
+  background: var(--abu);
+}
+
+
+
+
 /* ══ 9. BANNER HERO DI HALAMAN DALAM (PAGE HERO) ══ */
 .page-hero {
   background: linear-gradient(135deg, var(--biru) 0%, var(--biru-mid) 100%);
