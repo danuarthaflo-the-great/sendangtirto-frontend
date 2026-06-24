@@ -194,8 +194,11 @@ function inisialisasiPeta() {
   const peta = new google.maps.Map(document.getElementById("map"), {
     zoom: 16, // Tingkat perbesaran peta
     center: lokasiKantor, // Pusat peta
-    mapTypeControl: true,
-    streetViewControl: false,
+    mapTypeId: 'roadmap', // Memaksa tampilan 2D Roadmap (Peta Jalan)
+    tilt: 0, // Menonaktifkan kemiringan untuk tampilan 2D datar penuh
+    mapTypeControl: false, // Menyembunyikan tombol ganti tipe peta agar minimalis
+    streetViewControl: false, // Menyembunyikan tombol Street View
+    fullscreenControl: true, // Izinkan tombol layar penuh
   });
 
   // Membuat penanda (marker) pada peta
