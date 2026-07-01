@@ -227,6 +227,9 @@ function inisialisasiPeta() {
 
 // Daftarkan fungsi ke jendela global agar dapat diakses oleh callback Google Maps
 window.inisialisasiPeta = inisialisasiPeta;
+
+//Validasi Kontak Termuat
+console.log("Sistem Validasi dan Formulir serta API Google Map Berhasil digunakan")
 </script>
 
 <!-- Script API Google Maps dengan Kunci API yang Disediakan -->
