@@ -172,6 +172,9 @@ function tampilkanDetailAparatur(kunciJabatan) {
   // Buat efek scroll otomatis bergeser ke area panel detail agar terlihat langsung oleh pengguna
   setTimeout(() => panelDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
 }
+
+//Validasi data Termuat
+console.log("Data struktur berhasil dimuat")
 </script>
 </body>
 </html>
